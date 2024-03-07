@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { TextField, Button, Alert, Container, Typography } from '@mui/material';
 import './ReservationNumberComponent.css';
 
 function ReservationNumberComponent() {
@@ -79,32 +80,38 @@ function ReservationNumberComponent() {
   };
 
   return (
-<div className="card">
-  <div className="card-body">
-<h4 className="text-center" style={{ marginBottom: '20px', fontWeight: 'bold', fontSize: '24px', whiteSpace: 'nowrap' }}> سجل باش تعمل احلى تصاور</h4>
-    {/* Form to enter name */}
-    <div className="mb-3">
-      <label htmlFor="name" className="form-label">اسمك</label>
-      <input type="text" id="name" className="form-control" value={name} onChange={handleNameChange} required/>
-    </div>
-    {/* Form to enter phone number */}
-    <div className="mb-3">
-      <label htmlFor="num" className="form-label">رقم هاتفك</label>
-      <input type="text" id="num" className="form-control" value={num} onChange={handlePhoneNumberChange} />
-    </div>
-    {/* Button to make reservation */}
-    <div className="text-center">
-      {!isOpen ? (
-        <button className="btn btn-secondary" disabled>
-          نحن مغلقون الآن
-        </button>
-      ) : (
-        <button onClick={handleReservationClick} className="btn btn-primary">
+    <Container maxWidth="sm">
+      <Typography variant="h4" align="center" style={{ marginBottom: '20px', fontWeight: 'bold', fontSize: '24px', whiteSpace: 'nowrap' }}>
+        سجل باش تعمل احلى تصاور
+      </Typography>
+      <TextField
+        fullWidth
+        label="اسمك"
+        value={name}
+        onChange={handleNameChange}
+        variant="outlined"
+        margin="normal"
+        required
+      />
+      <TextField
+        fullWidth
+        label="رقم هاتفك"
+        value={num}
+        onChange={handlePhoneNumberChange}
+        variant="outlined"
+        margin="normal"
+        required
+      />
+      {isOpen ? (
+        <Button variant="contained" color="primary" fullWidth onClick={handleReservationClick}>
           إجراء الحجز
-        </button>
+        </Button>
+      ) : (
+        <Button variant="contained" color="secondary" fullWidth disabled>
+          نحن مغلقون الآن
+        </Button>
       )}
-    </div>
-    <br></br>
+    <br></br><br></br>
     {/* Display reservation number if available */}
     <div class="container">
   <div class="row">
@@ -114,16 +121,12 @@ function ReservationNumberComponent() {
     </div>
   </div>
 </div>
-
-    {/* Display error message if reservation failed */}
-    {error && (
-      <div className="alert alert-danger" role="alert">
-        {error}
-      </div>
-    )}
-  </div>
-</div>
-
+      {error && (
+        <Alert severity="error" style={{ marginTop: '20px' }}>
+          {error}
+        </Alert>
+      )}
+    </Container>
   );
 }
 
