@@ -14,6 +14,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <br></br>
         <div className="header">
           <img src={logo} alt="Studio Logo" className="logo" />
           <div class="nine">
@@ -55,8 +56,8 @@ function App() {
                         </div>
                         <div className="col-md-6 col-lg-2 mx-auto mt-3"> {/* Reduced column size for mobile */}
                           <h6 className="text-uppercase mb-3 font-weight-bold">تابعنا</h6>
-                          <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#3b5998' }} href="#!"><i className="fab fa-facebook-f fa-square"></i></a>
-                          <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#ac2bac' }} href="#!"><i className="fab fa-instagram fa-square"></i></a>
+                          <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#3b5998' }} href="https://www.facebook.com/fotografi.studio.houssem"><i className="fab fa-facebook-f fa-square"></i></a>
+                          <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#ac2bac' }} href="https://www.instagram.com/studio_houssem_22097666/"><i className="fab fa-instagram fa-square"></i></a>
                         </div>
                       </div>
                     </section>
