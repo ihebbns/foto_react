@@ -30,6 +30,7 @@ function App() {
                 <div className="content-wrapper">
                   <br />
                   <ReservationNumberComponent />
+              <br></br>
                   <ReservationStatusPage />
                 </div>
                 <footer className="text-center text-white" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
