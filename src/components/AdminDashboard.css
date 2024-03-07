@@ -1,0 +1,119 @@
+/* AdminDashboard.css */
+
+.admin-dashboard {
+  padding: 20px;
+}
+
+.admin-dashboard h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.client-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff; /* Set background color of table to white */
+}
+
+.client-table th, .client-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.client-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+.client-table td {
+  text-align: left;
+}
+
+.client-table td button {
+  padding: 6px 12px; /* Reduced padding for buttons */
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.client-table td button:hover {
+  background-color: #c82333;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.search-container button {
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #222;
+}
+
+.reservation-button {
+  padding: 8px 16px; /* Reduced padding for reservation button */
+  margin-top: 10px;
+  font-size: 14px; /* Reduced font size for reservation button */
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.open-button {
+  background-color: #2ecc71; /* Soft green color */
+  color: #fff; /* White text */
+}
+
+.close-button {
+  background-color: #e74c3c; /* Soft red color */
+  color: #fff; /* White text */
+}
+
+
+.open-button:hover, .close-button:hover {
+  opacity: 0.9;
+}

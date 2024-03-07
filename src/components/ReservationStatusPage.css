@@ -1,0 +1,64 @@
+/* ReservationStatusPage.css */
+.reservation-status-container {
+  text-align: center;
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+  margin-bottom: 50px; /* Add margin to increase proximity to adjacent content */
+}
+.table-container {
+  margin: 0 auto; /* Center the table horizontally */
+  max-width: 800px; /* Adjust the maximum width of the table as needed */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px; /* Increase padding for better spacing */
+  text-align: center; /* Center align text */
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.reservation-status-container {
+  text-align: center;
+}
+
+.ribbon {
+  display: inline-block;
+  position: relative;
+}
+
+
+
+.reservation-number-container {
+  margin-top: 20px;
+}
+
+.reservation-number-box {
+  display: inline-block;
+  background-color: #fff; /* White background color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px; /* Add rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+.reservation-number {
+  font-size: 24px;
+  font-weight: bold;
+}
+
