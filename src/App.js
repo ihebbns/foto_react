@@ -49,12 +49,17 @@ function App() {
                           <p className="text-white">الصور الرسمية</p>
                           <p className="text-white">صور وفيديوهات تسويقية</p>
                         </div>
-                        <div className="col-md-5 col-lg-4 mx-auto mt-3"> {/* Reduced column size for mobile */}
-                          <h6 className="text-uppercase mb-3 font-weight-bold">الاتصال</h6>
-                          <p><i className="fas fa-phone mr-2"></i> <a href="tel:+21646387383" style={{ color: 'blue', direction: 'ltr' }}>+216 46 387 383</a></p>
-                          <p><i className="fas fa-home mr-2"></i> شارع حمادي الغربي، قليبية 8090، تونس</p>
-                          <p><i className="fas fa-envelope mr-2"></i>studiohoussem10@gmail.com</p>
-                        </div>
+                       <div className="col-md-5 col-lg-4 mx-auto mt-3"> {/* Reduced column size for mobile */}
+                       <h6 className="text-uppercase mb-3 font-weight-bold">الاتصال</h6>
+                      <p>
+                          <i className="fas fa-phone mr-2" style={{float: 'right'}}></i>
+                          <span style={{ direction: 'ltr' }}>
+                         <a href="tel:+21646387383" style={{ color: 'blue' }}>+216 46 387 383</a>
+                       </span>
+                      </p>
+                     <p><i className="fas fa-home mr-2"></i> شارع حمادي الغربي، قليبية 8090، تونس</p>
+                   <p><i className="fas fa-envelope mr-2"></i>studiohoussem10@gmail.com</p>
+                   </div>
                         <div className="col-md-6 col-lg-2 mx-auto mt-3"> {/* Reduced column size for mobile */}
                        <h6 className="text-uppercase mb-3 font-weight-bold">تابعنا</h6>
                         <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#3b5998' }} href="https://www.facebook.com/fotografi.studio.houssem"><i className="fab fa-facebook-f fa-lg"></i></a>
