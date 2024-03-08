@@ -33,7 +33,7 @@ function App() {
                   <br></br>
                   <ReservationStatusPage />
                 </div>
-                <footer className="text-center text-white rtl" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                <footer className="text-center text-white rtl" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', direction: 'rtl' }}>
                   <div className="container p-2"> {/* Smaller padding for mobile */}
                     <section className="mb-2"> {/* Smaller margin for mobile */}
                       <div className="row">
