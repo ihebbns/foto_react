@@ -51,9 +51,9 @@ function App() {
                         </div>
                         <div className="col-md-5 col-lg-4 mx-auto mt-3"> {/* Reduced column size for mobile */}
                           <h6 className="text-uppercase mb-3 font-weight-bold">الاتصال</h6>
-                          <p><i className="fas fa-home mr-2"></i> شارع حمادي الغربي، قليبية 8090، تونس</p>
+                            <p><i className="fas fa-phone mr-2"></i> <a href="tel:+21646387383" style={{ color: 'blue' }}>+216 46 387 383</a></p>
+                           <p><i className="fas fa-home mr-2"></i> شارع حمادي الغربي، قليبية 8090، تونس</p>
                           <p><i className="fas fa-envelope mr-2"></i>studiohoussem10@gmail.com</p>
-                          <p><i className="fas fa-phone mr-2"></i> <a href="tel:+21646387383" style={{ color: 'blue' }}>+216 46 387 383</a></p>
                         </div>
                         <div className="col-md-6 col-lg-2 mx-auto mt-3"> {/* Reduced column size for mobile */}
                           <h6 className="text-uppercase mb-3 font-weight-bold">تابعنا</h6>
