@@ -55,11 +55,12 @@ function App() {
                            <p><i className="fas fa-home mr-2"></i> شارع حمادي الغربي، قليبية 8090، تونس</p>
                           <p><i className="fas fa-envelope mr-2"></i>studiohoussem10@gmail.com</p>
                         </div>
-                        <div className="col-md-6 col-lg-2 mx-auto mt-3"> {/* Reduced column size for mobile */}
-                          <h6 className="text-uppercase mb-3 font-weight-bold">تابعنا</h6>
-                          <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#3b5998' }} href="https://www.facebook.com/fotografi.studio.houssem"><i className="fab fa-facebook-f fa-square"></i></a>
-                          <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#ac2bac' }} href="https://www.instagram.com/studio_houssem_22097666/"><i className="fab fa-instagram fa-square"></i></a>
-                        </div>
+                         <div className="col-md-6 col-lg-2 mx-auto mt-3"> {/* Reduced column size for mobile */}
+          <h6 className="text-uppercase mb-3 font-weight-bold">تابعنا</h6>
+          <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#3b5998' }} href="https://www.facebook.com/fotografi.studio.houssem"><i className="fab fa-facebook-f fa-square"></i></a>
+          <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#ac2bac' }} href="https://www.instagram.com/studio_houssem_22097666/"><i className="fab fa-instagram fa-square"></i></a>
+          <a className="btn btn-primary btn-floating m-1" style={{ backgroundColor: '#25D366' }} href="https://api.whatsapp.com/send?phone=+21646387383"><i className="fab fa-whatsapp fa-square"></i></a>
+        </div>
                       </div>
                     </section>
                   </div>
