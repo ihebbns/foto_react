@@ -42,7 +42,7 @@ function ReservationNumberComponent() {
   
     try {
       // Check if the phone number already exists in the database
-      const response = await fetch(`https://photograph-1.onrender.com/clients/phone-number/${num}`);
+      const response = await fetch(`http://102.211.210.21:3000/clients/phone-number/${num}`);
       if (!response.ok) {
          await response.json();
 
@@ -52,7 +52,7 @@ function ReservationNumberComponent() {
       }
   
       // If phone number is valid and not already in the database, make the reservation
-      const reservationResponse = await fetch('https://photograph-1.onrender.com/clients', {
+      const reservationResponse = await fetch('http://102.211.210.21:3000/clients', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
