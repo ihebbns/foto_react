@@ -13,7 +13,7 @@ function ReservationStatusPage() {
 
   async function fetchFirstClientReservationNumber() {
     try {
-      const response = await fetch('https://photograph-1.onrender.com/clients');
+      const response = await fetch('http://102.211.210.21:3000/clients');
       const data = await response.json();
       if (data.length > 0) {
         setFirstClientReservationNumber(data[0].reservationNumber); // Set the reservation number of the first client
