@@ -43,7 +43,7 @@ function ReservationNumberComponent() {
     try {
       // Check if the phone number already exists in the database
       const response = await fetch(`http://102.211.210.21:3000/clients/phone-number/${num}`);
-      if (!response.ok) {
+      if (response.ok) {
          await response.json();
 
       } else {
