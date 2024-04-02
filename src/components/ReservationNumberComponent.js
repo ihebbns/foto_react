@@ -15,7 +15,7 @@ function ReservationNumberComponent() {
 
   async function fetchReservationState() {
     try {
-      const response = await fetch('https://photograph-1.onrender.com/admin/auth/reservation-state');
+      const response = await fetch('http://102.211.210.21:3000/admin/auth/reservation-state');
       if (response.ok) {
         const data = await response.json();
         setIsOpen(data.isOpen);
