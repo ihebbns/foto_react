@@ -15,7 +15,7 @@ function ReservationNumberComponent() {
 
   async function fetchReservationState() {
     try {
-      const response = await fetch('http://studiohoussem:3000/admin/auth/reservation-state');
+      const response = await fetch('http://studiohoussem.com:3000/admin/auth/reservation-state');
       if (response.ok) {
         const data = await response.json();
         setIsOpen(data.isOpen);
@@ -42,7 +42,7 @@ function ReservationNumberComponent() {
   
     try {
       // Check if the phone number already exists in the database
-      const response = await fetch(`http://studiohoussem:3000/clients/phone-number/${num}`);
+      const response = await fetch(`http://studiohoussem.com:3000/clients/phone-number/${num}`);
       if (!response.ok) {
          await response.json();
 
@@ -52,7 +52,7 @@ function ReservationNumberComponent() {
       }
   
       // If phone number is valid and not already in the database, make the reservation
-      const reservationResponse = await fetch('http://studiohoussem:3000/clients', {
+      const reservationResponse = await fetch('http://studiohoussem.com:3000/clients', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
