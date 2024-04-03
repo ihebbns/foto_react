@@ -39,7 +39,7 @@ function AdminDashboard() {
 
   async function fetchClients() {
     try {
-      const response = await fetch('http://102.211.210.21:3000/clients');
+      const response = await fetch('http://localhost:3000/clients');
       const data = await response.json();
       setClients(data);
     } catch (error) {
@@ -49,7 +49,7 @@ function AdminDashboard() {
 
   async function fetchReservationState() {
     try {
-      const response = await fetch('http://102.211.210.21:3000/admin/auth/reservation-state');
+      const response = await fetch('http://localhost:3000/admin/auth/reservation-state');
       const data = await response.json();
       setIsOpen(data.isOpen);
     } catch (error) {
@@ -72,7 +72,7 @@ function AdminDashboard() {
 
   const toggleReservation = async () => {
     try {
-      const response = await fetch('http://102.211.210.21:3000/admin/auth/toggle-reservations', {
+      const response = await fetch('http://localhost:3000/admin/auth/toggle-reservations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
