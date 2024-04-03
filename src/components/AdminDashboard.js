@@ -39,7 +39,7 @@ function AdminDashboard() {
 
   async function fetchClients() {
     try {
-      const response = await fetch('http://studiohoussem.com:3000/clients');
+      const response = await fetch('https://botdis.xyz/clients');
       const data = await response.json();
       setClients(data);
     } catch (error) {
@@ -49,7 +49,7 @@ function AdminDashboard() {
 
   async function fetchReservationState() {
     try {
-      const response = await fetch('http://studiohoussem.com:3000/admin/auth/reservation-state');
+      const response = await fetch('https://botdis.xyz/admin/auth/reservation-state');
       const data = await response.json();
       setIsOpen(data.isOpen);
     } catch (error) {
@@ -59,7 +59,7 @@ function AdminDashboard() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://studiohoussem.com:3000/clients/${id}`, {
+      await fetch(`https://botdis.xyz/clients/${id}`, {
         method: 'DELETE',
       });
       // Update the reservation numbers for remaining users
@@ -72,7 +72,7 @@ function AdminDashboard() {
 
   const toggleReservation = async () => {
     try {
-      const response = await fetch('http://studiohoussem.com:3000/admin/auth/toggle-reservations', {
+      const response = await fetch('https://botdis.xyz/admin/auth/toggle-reservations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
