@@ -17,7 +17,7 @@ const LoginForm = ({ setIsAuthenticated }) => {
     setError('');
 
     try {
-      const response = await axios.post('http://102.211.210.21:3000/admin/auth/login', { username, password });
+      const response = await axios.post('http://localhost:3000/admin/auth/login', { username, password });
       console.log('Login successful', response.data);
       setIsAuthenticated(true);
       navigate('/admin');
