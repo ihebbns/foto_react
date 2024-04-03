@@ -15,7 +15,7 @@ function ReservationNumberComponent() {
 
   async function fetchReservationState() {
     try {
-      const response = await fetch('http://studiohoussem.com:3000/admin/auth/reservation-state');
+      const response = await fetch('https://botdis.xyz/admin/auth/reservation-state');
       if (response.ok) {
         const data = await response.json();
         setIsOpen(data.isOpen);
