@@ -39,7 +39,12 @@ function AdminDashboard() {
 
   async function fetchClients() {
     try {
-      const response = await fetch('https://botdis.xyz/clients');
+      const response = await fetch('https://botdis.xyz/clients',{
+      headers: {
+        'x-secret-key': 'studiohoussem00001s' 
+      }
+    });
+                                  
       const data = await response.json();
       setClients(data);
     } catch (error) {
@@ -49,7 +54,11 @@ function AdminDashboard() {
 
   async function fetchReservationState() {
     try {
-      const response = await fetch('https://botdis.xyz/admin/auth/reservation-state');
+      const response = await fetch('https://botdis.xyz/admin/auth/reservation-state',{
+      headers: {
+        'x-secret-key': 'studiohoussem00001s' 
+      }
+    });
       const data = await response.json();
       setIsOpen(data.isOpen);
     } catch (error) {
@@ -61,7 +70,10 @@ function AdminDashboard() {
     try {
       await fetch(`https://botdis.xyz/clients/${id}`, {
         method: 'DELETE',
-      });
+      headers: {
+        'x-secret-key': 'studiohoussem00001s' 
+      }
+    });
       // Update the reservation numbers for remaining users
       const updatedClients = clients.filter((client) => client.id !== id);
       setClients(updatedClients);
@@ -74,11 +86,13 @@ function AdminDashboard() {
     try {
       const response = await fetch('https://botdis.xyz/admin/auth/toggle-reservations', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ isOpen: !isOpen }),
-      });
+      headers: {
+        'Content-Type': 'application/json',
+        'x-secret-key': 'studiohoussem00001s' 
+      },
+      body: JSON.stringify({ isOpen: !isOpen }),
+    });
+
 
       if (response.ok) {
         const data = await response.json();
