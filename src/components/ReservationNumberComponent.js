@@ -11,6 +11,8 @@ function ReservationNumberComponent() {
 
   useEffect(() => {
     fetchReservationState(); // Fetch reservation state when component mounts
+    const intervalId = setInterval(fetchReservationState, 5000); 
+    return () => clearInterval(intervalId); // Clear interval on component unmount
   }, []);
 
   async function fetchReservationState() {
@@ -118,14 +120,24 @@ function ReservationNumberComponent() {
 
           />
           {isOpen ? (
-            <Button variant="contained" color="primary" fullWidth onClick={handleReservationClick}>
-              إجراء الحجز
-            </Button>
-          ) : (
-            <Button variant="contained" color="secondary" fullWidth disabled>
-              نحن مغلقون الآن
-            </Button>
-          )}
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          onClick={handleReservationClick}
+        >
+          إجراء الحجز
+        </Button>
+      ) : (
+        <Button
+          variant="contained"
+          color="secondary"
+          fullWidth
+          disabled
+        >
+          نحن مغلقون الآن
+        </Button>
+      )}
           {reservationNumber && (
             <Alert severity="success" style={{ marginTop: '20px', padding: '20px', fontSize: '20px', lineHeight: '30px' }}>
               رقم حجزك هو <b>{reservationNumber}</b>. يرجى الحضور إلى الاستديو عند اقترابه احفظه جيدا.
