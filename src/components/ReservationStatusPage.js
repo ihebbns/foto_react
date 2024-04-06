@@ -13,7 +13,11 @@ function ReservationStatusPage() {
 
   async function fetchFirstClientReservationNumber() {
     try {
-      const response = await fetch('https://botdis.xyz/clients');
+      const response = await fetch('https://botdis.xyz/clients', {
+    headers: {
+      'x-secret-key': 'studiohoussem00001s' 
+    }
+  });
       const data = await response.json();
       if (data.length > 0) {
         setFirstClientReservationNumber(data[0].reservationNumber); // Set the reservation number of the first client
