@@ -15,7 +15,11 @@ function ReservationNumberComponent() {
 
   async function fetchReservationState() {
     try {
-      const response = await fetch('https://botdis.xyz/admin/auth/reservation-state');
+      const response = await fetch('https://botdis.xyz/admin/auth/reservation-state', {
+    headers: {
+      'x-secret-key': 'studiohoussem00001s' 
+    }
+  });
       if (response.ok) {
         const data = await response.json();
         setIsOpen(data.isOpen);
@@ -42,7 +46,11 @@ function ReservationNumberComponent() {
   
     try {
       // Check if the phone number already exists in the database
-      const response = await fetch(`https://botdis.xyz/clients/phone-number/${num}`);
+      const response = await fetch(`https://botdis.xyz/clients/phone-number/${num}`, {
+    headers: {
+      'x-secret-key': 'studiohoussem00001s' 
+    }
+  });
       if (!response.ok) {
          await response.json();
 
@@ -56,6 +64,7 @@ function ReservationNumberComponent() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'x-secret-key': 'studiohoussem00001s'
         },
         body: JSON.stringify({ name, num }),
       });
