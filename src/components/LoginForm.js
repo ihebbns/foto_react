@@ -17,7 +17,11 @@ const LoginForm = ({ setIsAuthenticated }) => {
     setError('');
 
     try {
-      const response = await axios.post('https://botdis.xyz/admin/auth/login', { username, password });
+      const response = await axios.post('https://botdis.xyz/admin/auth/login', { username, password }, {
+      headers: {
+        'x-secret-key': 'studiohoussem00001s' 
+      }
+    });
       console.log('Login successful', response.data);
       setIsAuthenticated(true);
       navigate('/admin');
