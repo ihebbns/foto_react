@@ -138,7 +138,7 @@ function ReservationNumberComponent() {
       )}
           {reservationNumber && (
             <Alert severity="success" style={{ marginTop: '20px', padding: '20px', fontSize: '20px', lineHeight: '30px' }}>
-              رقم حجزك هو <b>{reservationNumber}</b>. يرجى الحضور إلى الاستدويو عند اقترابه احفظه جيدا.
+              رقم حجزك هو <b>{reservationNumber}</b>. يرجى الحضور إلى الاستوديو عند اقترابه احفظه جيدا.
             </Alert>
           )}
           {error && (
