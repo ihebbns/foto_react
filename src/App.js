@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '@fortawesome/fontawesome-free/css/all.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ReservationNumberComponent from './components/ReservationNumberComponent';
@@ -10,6 +11,24 @@ import logo from './img/studio.png';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    useEffect(() => {
+    // Set up Axios interceptor for handling cancellation errors
+    const interceptor = axios.interceptors.response.use(
+      undefined,
+      error => {
+        if (axios.isCancel(error)) {
+          throw new axios.Cancel('Operation canceled by the user.');
+        }
+        return Promise.reject(error);
+      }
+    );
+
+    // Clean up the interceptor when component unmounts
+    return () => {
+      axios.interceptors.response.eject(interceptor);
+    };
+  }, []); // Run only once on component mount
 
   return (
     <Router>
