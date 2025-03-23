@@ -84,7 +84,7 @@ function App() {
                     </section>
                   </div>
                   <div className="p-2" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}> {/* Smaller padding for mobile */}
-                    © 2024 الحقوق محفوظة
+                    © 2025 الحقوق محفوظة
                   </div>
                 </footer>
               </>
