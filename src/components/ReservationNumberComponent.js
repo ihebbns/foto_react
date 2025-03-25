@@ -7,7 +7,7 @@ function ReservationNumberComponent() {
   const [name, setName] = useState('');
   const [num, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
-  const [isOpen, setIsOpen] = useState(false); // State variable for reservation state
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     fetchReservationState(); // Fetch reservation state when component mounts
@@ -16,10 +16,10 @@ function ReservationNumberComponent() {
   async function fetchReservationState() {
     try {
       const response = await fetch('https://botdis.xyz/admin/auth/reservation-state', {
-    headers: {
-      'x-secret-key': 'studiohoussem00001s' 
-    }
-  });
+        headers: {
+          'x-secret-key': 'studiohoussem00001s'
+        }
+      });
       if (response.ok) {
         const data = await response.json();
         setIsOpen(data.isOpen);
@@ -37,28 +37,26 @@ function ReservationNumberComponent() {
       return;
     }
   
-    // Validate phone number format (exactly 8 digits)
     const numRegex = /^\d{8}$/;
     if (!numRegex.test(num)) {
       setError('يرجى إدخال رقم هاتف صحيح (8 أرقام).');
       return;
     }
-  
+
     try {
       // Check if the phone number already exists in the database
       const response = await fetch(`https://botdis.xyz/clients/phone-number/${num}`, {
-    headers: {
-      'x-secret-key': 'studiohoussem00001s' 
-    }
-  });
-      if (!response.ok) {
-         await response.json();
+        headers: {
+          'x-secret-key': 'studiohoussem00001s'
+        }
+      });
 
-      } else {
-        
-        throw new Error('Failed to check phone number availability.');
+      if (response.ok) {
+        // If the phone number already exists, show an error
+        setError('الرقم موجود بالفعل.');
+        return;
       }
-  
+
       // If phone number is valid and not already in the database, make the reservation
       const reservationResponse = await fetch('https://botdis.xyz/clients', {
         method: 'POST',
@@ -68,17 +66,17 @@ function ReservationNumberComponent() {
         },
         body: JSON.stringify({ name, num }),
       });
-      if (!reservationResponse.ok) {
+      if (reservationResponse.ok) {
+        const reservationData = await reservationResponse.json();
+        setReservationNumber(reservationData.reservationNumber);
+      } else {
         throw new Error('فشل في إجراء الحجز');
       }
-      const reservationData = await reservationResponse.json();
-      setReservationNumber(reservationData.reservationNumber);
     } catch (error) {
       console.error('خطأ في إجراء الحجز:', error.message);
       setError('فشل في إجراء الحجز . الرقم موجود بالفعل.');
     }
   };
-  
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -103,8 +101,7 @@ function ReservationNumberComponent() {
             variant="outlined"
             margin="normal"
             required
-            style={{ textAlign: 'right' }} 
-
+            style={{ textAlign: 'right' }}
           />
           <TextField
             fullWidth
@@ -114,28 +111,27 @@ function ReservationNumberComponent() {
             variant="outlined"
             margin="normal"
             required
-            style={{ textAlign: 'right' }} 
-
+            style={{ textAlign: 'right' }}
           />
           {isOpen ? (
-        <Button
-          variant="contained"
-          color="primary"
-          fullWidth
-          onClick={handleReservationClick}
-        >
-          إجراء الحجز
-        </Button>
-      ) : (
-        <Button
-          variant="contained"
-          color="secondary"
-          fullWidth
-          disabled
-        >
-          نحن مغلقون الآن
-        </Button>
-      )}
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              onClick={handleReservationClick}
+            >
+              إجراء الحجز
+            </Button>
+          ) : (
+            <Button
+              variant="contained"
+              color="secondary"
+              fullWidth
+              disabled
+            >
+              نحن مغلقون الآن
+            </Button>
+          )}
           {reservationNumber && (
             <Alert severity="success" style={{ marginTop: '20px', padding: '20px', fontSize: '20px', lineHeight: '30px' }}>
               رقم حجزك هو <b>{reservationNumber}</b>. يرجى الحضور إلى الاستوديو عند اقترابه احفظه جيدا.
